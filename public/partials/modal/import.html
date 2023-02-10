@@ -1,0 +1,52 @@
+<div class='panel panel-default phone-verification no-margin-bottom'>
+    <div class='panel-body'>
+        <form>
+            <!--
+            <div class='form-group'>
+                <label>Absolute path</label>
+                <input type='text'
+                       class='form-control'
+                       ng-model='path'
+                       ng-disabled='loading'
+                       localized-placeholder='administration.consumers.local.path.placeholder'/>
+            </div>
+            -->
+
+            <input id="inputFile" ng-model='path' type="file"/>
+            <img class='margin-left' ng-if='loading' src='/assets/images/loading.gif'>
+            <br>
+            <label class='pointer tiny-label'>Select file source</label>
+            <br>
+
+
+            <div class='col-sm-6'
+                 ng-repeat='source in filtered = ( sources | filter: selectedSource.filter ) | limitTo: selectedSource.limit'>
+                <input ng-click='getValue(source.name)'  type="radio" id="{{source.name}}" name="source" value="{{source.name}}" />
+                <label for="{{source.name}}">{{source.name}}</label>
+            </div>
+    <br>
+            <br>
+            <br>
+            <div class='form-group'>
+                <label>Skip records</label>
+                <input type='text'
+                       class='form-control'
+                       ng-model='skipRecords'
+                       ng-disabled='loading'
+                       localized-placeholder='enter skipped records count'/>
+            </div>
+
+            <div class='right-align'>
+                <button class='btn btn-default'
+                        ng-click='close()'
+                        ng-disabled='loading'
+                        localized>lists.modal.cancel</button>
+
+                <button ng-click='import()'
+                        ng-if='!loading'
+                        class='btn btn-default'
+                        localized>Import data</button>
+            </div>
+        </form>
+    </div>
+</div>

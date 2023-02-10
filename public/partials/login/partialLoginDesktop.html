@@ -1,0 +1,65 @@
+<!-- Register Modal Mobile-->
+
+<div class="" >
+
+    <div ng-include="'/assets/partials/login/registerModalDesktop.html'"></div>
+    <div ng-include="'/assets/partials/login/forgotpassworddesktop.html'"></div>
+
+    <div style="width: 41%;margin-top: 5em;" class="modal-dialog" role="document">
+        <div style="padding: 1em 1em 0em 1em" class="modal-content">
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <p style="font-family: 'Source Sans Pro SemiBold';color: #707070;font-size: 39px;margin-left: -0.4em" id="exampleModalLabel">Log in</p>
+                        </div>
+                        <div class="col col-lg-6">
+                            <p data-toggle="modal" data-target="#exampleModalRegister"  data-dismiss="modal" style="cursor: pointer;font-family: 'Source Sans Pro SemiBold';color: #707070;font-size: 20px;text-align: right;margin-right: 1em" id="exampleModalLabel2">Sign Up</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form ng-submit='login()' onsubmit="myFunction()">
+                    <div class="form-group" style="margin-right: 2em">
+                        <input style="background-color: #EEEEEE;font-family: 'Source Sans Pro SemiBold';" ng-model='loginRequest.username'
+                               class="form-control text-transform-none" placeholder="Email">
+                    </div>
+                    <div class="form-group" style="margin-right: 2em">
+                        <input style="background-color: #EEEEEE;font-family: 'Source Sans Pro SemiBold';" type="password"
+                               ng-model='loginRequest.password'
+                               class="form-control" placeholder="Password">
+                        <br>
+                        <a style="color: #707070;font-family: 'Source Sans Pro SemiBold';font-size: 22px" class='forgot' data-toggle="modal" data-target="#forgotPasswordModalDesktop" data-dismiss="modal" >Forgot password?</a>
+                    </div>
+                    <div style="margin-left: -1em" class="form-group terms-of-use">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-lg-1">
+                                    <input class='checkbox'
+                                           id="termsAgreed"
+                                           type="checkbox"
+                                           ng-model='loginRequest.termsAgreed'>
+                                </div>
+                                <div class="col col-lg-11">
+                                    <label for="termsAgreed">
+                                        By using MakeMyData software, you agree to the
+                                        <a style="color: #E87E04;font-family: 'Source Sans Pro';font-size: 22px" class='terms-link' target="_blank" href="/#/terms">MakeMyData General Terms and Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="text-right">
+                            <button style="font-family: 'Source Sans Pro SemiBold';" type="submit"
+                                    ng-disabled='!loginRequest.username || !loginRequest.password || !loginRequest.termsAgreed' class="login-button">Log in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

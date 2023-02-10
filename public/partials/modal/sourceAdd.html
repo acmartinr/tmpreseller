@@ -1,0 +1,25 @@
+<div class='panel panel-default phone-verification no-margin-bottom'>
+    <div class='panel-body'>
+        <form>
+            <div class='form-group'>
+                <label>Source name</label>
+                <input type='text'
+                       class='form-control'
+                       ng-model='sourceName.name'
+                       localized-placeholder='enter table name'/>
+            </div>
+
+
+            <div class='right-align'>
+                <button class='btn btn-default'
+                        ng-click='close()'
+                        localized>lists.modal.cancel</button>
+
+                <button ng-click='saveSource()'
+                        class='btn btn-default'
+                        ng-disabled='!sourceName.name'
+                        localized>Save</button>
+            </div>
+        </form>
+    </div>
+</div>

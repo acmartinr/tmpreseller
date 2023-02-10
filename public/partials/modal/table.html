@@ -1,0 +1,41 @@
+<div class='panel panel-default phone-verification no-margin-bottom'>
+    <div class='panel-body'>
+        <form>
+            <div class='form-group'>
+                <label>Name</label>
+                <input type='text'
+                       class='form-control'
+                       ng-model='table.name'
+                       localized-placeholder='enter table name'/>
+            </div>
+
+            <div class='form-group'>
+                <label>Type</label>
+                <select class='form-control'
+                        ng-disabled='table.id'
+                        ng-model='table.type'>
+                    <option ng-selected='table.type == 2' value='2'>directory</option>
+                    <option ng-selected='table.type == 24' value='24'>consumer</option>
+                </select>
+            </div>
+
+            <div class='form-group'>
+                <label for='visible' class='margin-right-20 pointer'>Visible</label>
+                <input type='checkbox'
+                       id='visible'
+                       ng-model='table.visible'/>
+            </div>
+
+            <div class='right-align'>
+                <button class='btn btn-default'
+                        ng-click='close()'
+                        localized>lists.modal.cancel</button>
+
+                <button ng-click='save()'
+                        class='btn btn-default'
+                        ng-disabled='!table.name'
+                        localized>Save</button>
+            </div>
+        </form>
+    </div>
+</div>
